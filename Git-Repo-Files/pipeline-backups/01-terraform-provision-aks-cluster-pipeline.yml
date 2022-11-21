@@ -32,6 +32,7 @@ stages:
         displayName: Terraform Install
         inputs:
           terraformVersion: 'latest'
+          downloadUrl: 'charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller'
       - task: TerraformCLI@0
         displayName: Terraform Init
         inputs:
