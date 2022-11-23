@@ -60,6 +60,13 @@ stages:
           command: 'validate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/Git-Repo-Files/terraform-manifests'
           allowTelemetryCollection: false
+      - task: TerraformCLI@0
+        inputs:
+          command: 'apply'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/Git-Repo_files/terraform-manifests'
+          environmentServiceName: 'terraform-aks-azurerm-svc-con'
+          providerAzureRmSubscriptionId: 'b946077d-1524-470f-a675-7876b57b0d6c'
+          allowTelemetryCollection: false
 
 # Stage-2: Deploy Stages for Dev & QA
 # Deployment-1: Deploy Dev AKS Cluster
