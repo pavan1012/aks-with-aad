@@ -18,7 +18,7 @@ pool:
 stages:
   - stage: terraformvalidate
     jobs: 
-      - job: terraform-validate
+      - job: terraformvalidate
         continueOnError: false
         steps:
         - task: PublishPipelineArtifact@1
