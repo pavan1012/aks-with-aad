@@ -49,11 +49,11 @@ stages:
             backendServiceArm: 'terraform-aks-azurerm-svc-con'
             backendAzureRmSubscriptionId: 'b946077d-1524-470f-a675-7876b57b0d6c'
             ensureBackend: true
-            backendAzureRmResourceGroupName: 'pavan'
+            backendAzureRmResourceGroupName: 'terraform-storage-rg'
             backendAzureRmResourceGroupLocation: 'East US'
             backendAzureRmStorageAccountName: 'k8storage123'
             backendAzureRmContainerName: 'test'
-            backendAzureRmKey: 'aks.tfstate'
+            backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
             allowTelemetryCollection: false
         - task: TerraformCLI@0
           displayName: terraformvalidate
@@ -95,10 +95,10 @@ stages:
                     backendServiceArm: 'terraform-aks-azurerm-svc-con'
                     backendAzureRmSubscriptionId: 'b946077d-1524-470f-a675-7876b57b0d6c'
                     ensureBackend: true
-                    backendAzureRmResourceGroupName: 'pavan'
+                    backendAzureRmResourceGroupName: 'terraform-storage-rg'
                     backendAzureRmResourceGroupLocation: 'East US'
                     backendAzureRmContainerName: 'k8storage123'
-                    backendAzureRmKey: 'aks.tfstate'
+                    backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
                     allowTelemetryCollection: false
                 - task: TerraformCLI@0
                   name: terraformplan
