@@ -71,7 +71,7 @@ stages:
 ## Step-5: Terraform Apply (Use the plan created in previous step
 
   - stage: DeployAKSClusters
-      jobs:
+    jobs:
         - deployment: DeployDEVAKSClusters
           displayName: DeployDEVAKSClusters
           pool:
