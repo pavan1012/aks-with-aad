@@ -50,8 +50,7 @@ stages:
             backendAzureRmSubscriptionId: 'b946077d-1524-470f-a675-7876b57b0d6c'
             ensureBackend: true
             backendAzureRmResourceGroupName: 'terraform-storage-rg'
-            backendAzureRmResourceGroupLocation: 'East US'
-            backendAzureRmStorageAccountName: 'k8storage123'
+            backendAzureRmStorageAccountName: 'terraformstatexlrwdrzs'
             backendAzureRmContainerName: 'test'
             backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
             allowTelemetryCollection: false
@@ -96,8 +95,7 @@ stages:
                     backendAzureRmSubscriptionId: 'b946077d-1524-470f-a675-7876b57b0d6c'
                     ensureBackend: true
                     backendAzureRmResourceGroupName: 'terraform-storage-rg'
-                    backendAzureRmResourceGroupLocation: 'East US'
-                    backendAzureRmContainerName: 'k8storage123'
+                    backendAzureRmContainerName: 'terraformstatexlrwdrzs'
                     backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
                     allowTelemetryCollection: false
                 - task: TerraformCLI@0
