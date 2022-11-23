@@ -54,13 +54,13 @@ stages:
             backendAzureRmStorageAccountName: 'k8storage123'
             backendAzureRmContainerName: 'test'
             backendAzureRmKey: 'aks.tfstate'
-            allowTelemetryCollection: true
+            allowTelemetryCollection: false
         - task: TerraformCLI@0
           displayName: terraformvalidate
           inputs:
             command: 'validate'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Git-Repo-Files/terraform-manifests'
-            allowTelemetryCollection: true
+            allowTelemetryCollection: false
 
 # Stage-2: Deploy Stages for Dev & QA
 # Deployment-1: Deploy Dev AKS Cluster
