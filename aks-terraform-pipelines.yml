@@ -22,9 +22,9 @@ stages:
         continueOnError: false
         steps:
         - task: PublishPipelineArtifact@1
-          displayName: publishpipelineartifats
+          displayName: publishpipelineartifacts
           inputs:
-            targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
+            targetPath: '$(System.DefaultWorkingDirectory)/Git-Repo-Files/terraform-manifests'
             artifact: 'terraform-manifests-out'
             publishLocation: 'pipeline'
         - task: TerraformInstaller@0
