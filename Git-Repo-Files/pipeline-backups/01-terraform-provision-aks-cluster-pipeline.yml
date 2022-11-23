@@ -27,7 +27,7 @@ stages:
         displayName: Publish Artifacts
         inputs:
           targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
-          artifact: 'terraform-manifests-out'
+          artifact: 'drop'
           publishLocation: 'pipeline'
       - task: TerraformInstaller@0
         displayName: Terraform Install
