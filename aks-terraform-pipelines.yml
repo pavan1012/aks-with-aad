@@ -22,17 +22,17 @@ stages:
         continueOnError: false
         steps:
         - task: PublishPipelineArtifact@1
-          displayName: publish-artifacts
+          displayName: publishartifacts
           inputs:
             targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
             artifact: 'terraform-manifests-out'
             publishLocation: 'pipeline'
         - task: TerraformInstaller@0
-          displayName: terraform-install
+          displayName: terraforminstall
           inputs:
             terraformVersion: 'latest'
         - task: TerraformCLI@0
-          displayName: terraform-init
+          displayName: terraforminit
           inputs:
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
@@ -47,7 +47,7 @@ stages:
             backendAzureRmKey: 'aks.tfstate'
             allowTelemetryCollection: true
         - task: TerraformCLI@0
-          displayName: terraform-validate
+          displayName: terraformvalidate
           inputs:
             command: 'validate'
             workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
