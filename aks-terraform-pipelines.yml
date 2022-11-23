@@ -79,6 +79,7 @@ stages:
         runOnce:
           deploy:
             steps:
+            - checkout: self
             - task: DownloadSecureFile@1
               displayName: DownloadSSHKeys
               name: sshkey
