@@ -25,7 +25,7 @@ terraform {
       version = "~> 3.0"
     }
   }
-/*
+
 # Terraform State Storage to Azure Storage Container
   backend "azurerm" {
     #resource_group_name   = "terraform-storage-rg"
@@ -33,7 +33,6 @@ terraform {
     #container_name        = "tfstatefiles"
     #key                   = "terraform-custom-vnet.tfstate"
   }  
-*/
 }
 
 
@@ -49,4 +48,3 @@ provider "azurerm" {
 resource "random_pet" "aksrandom" {
 
 }
-
