@@ -50,9 +50,9 @@ stages:
             backendAzureRmSubscriptionId: 'b946077d-1524-470f-a675-7876b57b0d6c'
             ensureBackend: true
             backendAzureRmResourceGroupName: 'terraform-storage-rg'
-            backendAzureRmStorageAccountName: 'terraformstatexlrwdrzs'
-            backendAzureRmContainerName: 'test'
-            backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
+            backendAzureRmStorageAccountName: 'k8storage123'
+            backendAzureRmContainerName: 'tfstatefiles'
+            backendAzureRmKey: 'aks-base.tfstate'
             allowTelemetryCollection: false
         - task: TerraformCLI@0
           displayName: terraformvalidate
