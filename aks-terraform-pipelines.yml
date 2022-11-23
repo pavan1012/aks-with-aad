@@ -22,9 +22,35 @@ stages:
         continueOnError: false
         steps:
         - task: PublishPipelineArtifact@1
+          displayName: publish-artifacts
           inputs:
             targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
             artifact: 'terraform-manifests-out'
             publishLocation: 'pipeline'
-            
+        - task: TerraformInstaller@0
+          displayName: terraform-install
+          inputs:
+            terraformVersion: 'latest'
+        - task: TerraformCLI@0
+          displayName: terraform-init
+          inputs:
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
+            backendType: 'azurerm'
+            backendServiceArm: 'terraform-aks-azurerm-svc-con'
+            backendAzureRmSubscriptionId: 'b946077d-1524-470f-a675-7876b57b0d6c'
+            ensureBackend: true
+            backendAzureRmResourceGroupName: 'pavan'
+            backendAzureRmResourceGroupLocation: 'East US'
+            backendAzureRmStorageAccountName: 'k8storage123'
+            backendAzureRmContainerName: 'test'
+            backendAzureRmKey: 'aks.tfstate'
+            allowTelemetryCollection: true
+        - task: TerraformCLI@0
+          displayName: terraform-validate
+          inputs:
+            command: 'validate'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
+            allowTelemetryCollection: true
+
         
