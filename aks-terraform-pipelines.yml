@@ -105,7 +105,7 @@ stages:
               name: terraformplan
               inputs:
                 command: 'plan'
-                workingDirectory: '$(Pipeline.Workspace)/Git-Repo-Files/terraform-manifests-out'
+                workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 environmentServiceName: 'terraform-aks-azurerm-svc-con'
                 commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT) -out $(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
@@ -113,7 +113,7 @@ stages:
               name: terraformapply
               inputs:
                 command: 'apply'
-                workingDirectory: '$(Pipeline.Workspace)/Git-Repo-files/terraform-manifests-out'
+                workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 environmentServiceName: 'terraform-aks-azurerm-svc-con'
                 commandOptions: '$(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
