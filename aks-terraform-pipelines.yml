@@ -13,7 +13,8 @@ pool:
 variables:
 - name: DEV_ENVIRONMENT
   value: dev
-
+- name: system.debug
+  value: true
 - name: QA_ENVIRONMENT
   value: qa
 
