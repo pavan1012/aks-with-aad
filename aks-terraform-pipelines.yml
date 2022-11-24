@@ -85,6 +85,9 @@ stages:
               name: sshkey
               inputs:
                 secureFile: 'aks.pub'
+            - task: TerraformInstaller@0
+              inputs:
+                terraformVersion: 'latest'
             - task: TerraformCLI@0
               name: terraforminit
               inputs:
