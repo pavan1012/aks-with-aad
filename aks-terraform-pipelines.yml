@@ -92,7 +92,7 @@ stages:
               name: terraforminit
               inputs:
                 command: 'init'
-                workingDirectory: '$(Pipeline.Workspace)/Git-Repo-Files/terraform-manifests-out'
+                workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 backendType: 'azurerm'
                 backendServiceArm: 'terraform-aks-azurerm-svc-con'
                 ensureBackend: true
